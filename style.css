@@ -1,0 +1,421 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  padding: 75px;
+  background-color: #eee;
+}
+
+.container {
+  display: flex;
+  padding: 80px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.card-image {
+  height: 450px;
+  width: 350px;
+  margin-bottom: 25px;
+  transition: all 0.3s;
+}
+
+.card-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-name {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #242424;
+}
+
+.card-title,
+.card-more-info,
+.socials {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  color: #6b6b6b;
+}
+
+.card-title {
+  transition: display 0.3s;
+}
+
+.card-more-info {
+  /* width: 400px; */
+  margin-bottom: 15px;
+  transition: all 0.3s;
+}
+
+.card-more-info span {
+  display: block;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  gap: 20px;
+}
+
+.socials i {
+  cursor: pointer;
+}
+
+.card-footer {
+  display: none;
+  transition: display 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.03);
+}
+
+.card:hover .card-footer {
+  display: initial;
+}
+
+.card:hover .card-title {
+  display: none;
+}
+
+@media screen and (max-width: 1341px) {
+  body {
+    padding: 60px;
+  }
+
+  .card-title,
+  .card-more-info,
+  .socials {
+    text-align: center;
+    font-size: 15.5px;
+    font-weight: 500;
+    color: #6b6b6b;
+  }
+}
+
+@media screen and (max-width: 1243px) {
+  body {
+    padding: 45px;
+  }
+
+  .card-image {
+    height: 410px;
+    width: 310px;
+  }
+
+  .card-name {
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+
+  .card-title,
+  .card-more-info {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b6b6b;
+  }
+
+  .socials {
+    font-size: 16px;
+  }
+
+  .card-more-info {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  body {
+    padding: 50px;
+  }
+
+  .container {
+    gap: 15px;
+  }
+
+  .card-image {
+    height: 350px;
+    width: 290px;
+  }
+
+  .card-name {
+    font-size: 27px;
+    margin-bottom: 4px;
+  }
+
+  .card-title,
+  .card-more-info,
+  .socials {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #6b6b6b;
+  }
+
+  .card-more-info {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  body {
+    padding: 50px;
+  }
+
+  .container {
+    gap: 15px;
+  }
+
+  .card-image {
+    height: 350px;
+    width: 95%;
+  }
+
+  .card-name {
+    font-size: 25px;
+    margin-bottom: 4px;
+  }
+
+  .card-title,
+  .card-more-info {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b6b6b;
+  }
+
+  .socials {
+    font-size: 15px;
+  }
+
+  .card-more-info {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    gap: 20px;
+  }
+
+  .card {
+    pointer-events: none;
+  }
+
+  .card-footer {
+    margin-top: 10px;
+    display: initial;
+  }
+
+  .card-image {
+    height: 310px;
+    width: 210px;
+  }
+
+  .card-name {
+    font-size: 21px;
+    margin-bottom: 4px;
+  }
+
+  .card-title,
+  .card-more-info {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: #6b6b6b;
+  }
+
+  .socials {
+    font-size: 14px;
+  }
+
+  .card-more-info {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: f1f1f1;
+    border-radius: 25px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #6e93f7;
+    border-radius: 25px;
+  }
+
+  .container {
+    padding: 30px;
+    gap: 10px;
+    max-width: 450px;
+    width: 100%;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    scroll-padding: 30px;
+  }
+
+  .card {
+    pointer-events: none;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+
+  .card-footer {
+    margin-top: 10px;
+    display: initial;
+  }
+
+  .card-image {
+    height: 440px;
+    width: 310px;
+    margin-bottom: 25px;
+  }
+
+  .card-name {
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+
+  .card-title,
+  .card-more-info {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b6b6b;
+  }
+
+  .socials {
+    font-size: 21px;
+    gap: 25px;
+  }
+
+  .card-more-info {
+    margin-bottom: 15px;
+    overflow-wrap: break-word;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: f1f1f1;
+    border-radius: 25px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #6e93f7;
+    border-radius: 25px;
+  }
+
+  .container {
+    padding: 30px;
+    gap: 25px;
+    max-width: 450px;
+    width: 100%;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    scroll-padding: 30px;
+  }
+
+  .card {
+    pointer-events: none;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+
+  .card-footer {
+    margin-top: 10px;
+    display: initial;
+  }
+
+  .card-image {
+    height: 440px;
+    width: 320px;
+    margin-bottom: 25px;
+  }
+
+  .card-name {
+    font-size: 26px;
+    margin-bottom: 4px;
+  }
+
+  .card-title,
+  .card-more-info {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b6b6b;
+  }
+
+  .socials {
+    font-size: 21px;
+    gap: 25px;
+  }
+
+  .card-more-info {
+    margin-bottom: 15px;
+    overflow-wrap: break-word;
+  }
+}
+
+@media screen and (max-width: 462px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 390;
+  }
+
+  .card-image {
+    height: 440px;
+    width: 300px;
+    margin-bottom: 25px;
+  }
+}
